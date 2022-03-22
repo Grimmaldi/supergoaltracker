@@ -5,12 +5,10 @@ class Session:
 
     # TODO: Create Database/ connection
 
-    def __init__(self, username) -> None:
+    def __init__(self) -> None:
+        username = input('What is your username?')
         if username not in db:
             user = User(username)
         else:
             # TODO: load user from DB 
             NotImplemented
-
-
-
