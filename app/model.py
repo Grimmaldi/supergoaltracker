@@ -1,11 +1,20 @@
-class User:
+class Person:
 
-    def __init__(self, name):
-        self.name = name
+    def __init__(self):
+        self.name = None
+        self.birthday = None
+
+class User(Person):
+
+    def __init__(self, username, password):
+        super().__init__()
+        self.username = username
+        self.password = password
+        self.id = None
         self.activities = []
 
-    def __repr__(self) -> str:
-        return f"User({self.name})"
+    def __repr__(self):
+        return f"User({self.username})"
 
     def add_activity(self, activity_name, **kwargs):
         if activity_name not in self:
@@ -23,7 +32,7 @@ class User:
             print('Activity not found.')
 
     def edit_activity(self, activity_name, metric, new_value):
-        for i, activity in enumerate(self.activities):
+        for i, activity in enumerate(self.aectivities):
             if activity_name == activity.activity_name:
                 activity[i].edit(metric, new_value)
 
@@ -38,3 +47,9 @@ class Activity:
     def __init__(self, activity_name, **kwargs):
         self.activity_name = activity_name
         self._metrics = []
+
+
+class Metric:
+
+    def __init__(self) -> None:
+        pass
