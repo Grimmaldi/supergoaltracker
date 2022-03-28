@@ -1,6 +1,3 @@
-from urllib import response
-
-
 def welcome():
     print('Welcome to SuperGoal Tracker!')
 

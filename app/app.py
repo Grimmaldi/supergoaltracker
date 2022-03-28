@@ -1,16 +1,20 @@
-import interface
-from model import User, Activity
+from app.interface import welcome
+from app.model import User, Activity
+import json
 
 
 class Session:
 
-    # TODO: Create Database/ connection
+    def __init__(self):
+        
+        with open('./app/db.json') as dbfile:
+            db = json.load(dbfile)
 
-    def __init__(self) -> None:
-        interface.welcome()
+        welcome()
         username = input('What is your username?')
+        password = input('What is your password.')
         if username not in db:
-            user = User(username)
+            user = User(username, password)
         else:
             # TODO: load user from DB 
             NotImplemented

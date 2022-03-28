@@ -1,0 +1,17 @@
+{
+    "users": [{
+        "userid": "1",
+        "username": "JohnPExample",
+        "password": "password1234",
+        "name": "John P. Example",
+        "activities": {"activityname": "painting"}
+    }, 
+        {
+            "userid": "2",
+            "username": "JaneWExample",
+            "password": "password4567",
+            "name": "Jane W. Example",
+            "activities": {"activityname": "swimming"}
+        }
+    ]
+}
