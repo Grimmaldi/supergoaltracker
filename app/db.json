@@ -4,14 +4,29 @@
         "username": "JohnPExample",
         "password": "password1234",
         "name": "John P. Example",
-        "activities": {"activityname": "painting"}
+        "activities": [
+            {"activityname": "painting", 
+            "metrics":[
+                {"number_of_paintings":"4", 
+                "consecutive_days_of_painting":"52"}
+                ]}, 
+            {"activityname": "discus_throwing", 
+                "metrics":[
+                    {"farthest_throw":"200 meters", 
+                    "consecutive_weeks_of_training":"52"}
+                    ]}
+                ]
     }, 
         {
             "userid": "2",
             "username": "JaneWExample",
             "password": "password4567",
             "name": "Jane W. Example",
-            "activities": {"activityname": "swimming"}
+            "activities": [{"activityname": "swimming", 
+                "metrics":[
+                    {"fastest_lap":"00:01:22", 
+                    "consecutive_days_of_painting":"52"}
+                    ]}]
         }
     ]
 }
