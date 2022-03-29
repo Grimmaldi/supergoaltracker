@@ -27,14 +27,25 @@ class User(Person):
             for i, activity in enumerate(self.activities):
                 if activity_name == activity.activity_name:
                     del self.activities[i]
+                    print('Activity deleted.')
                     break
         else:
             print('Activity not found.')
 
-    def edit_activity(self, activity_name, metric, new_value):
-        for i, activity in enumerate(self.aectivities):
+    def edit_activity_name(self, current_activity_name, new_activity_name):
+        for activity in self.activities:
+            if current_activity_name == activity.activity_name:
+                for activity in self.activities:
+                    if new_activity_name == activity.activity_name:
+                        print("An activity with the new name was previously added.")
+                activity.activity_name = new_activity_name
+                print("Activity name updated.")
+        print("Activity not found.")
+
+    def update_activity_metric(activity_name, metric, new_value):
+        for activity in self.activities:
             if activity_name == activity.activity_name:
-                activity[i].edit(metric, new_value)
+                activity.edit_metric(metric, new_value)
 
     def __contains__(self, activity_name):
         for activity in self.activities:
@@ -42,14 +53,21 @@ class User(Person):
                 return True
         return False
 
+
 class Activity:
 
     def __init__(self, activity_name, **kwargs):
         self.activity_name = activity_name
         self._metrics = []
 
+    def edit_metric(metric, new_value):
+        for m in self.metrics:
+            if metric == m.name:
+                m.value = new_value
+
 
 class Metric:
 
-    def __init__(self) -> None:
-        pass
+    def __init__(self, name, value):
+        self.name = name
+        self.value = value
