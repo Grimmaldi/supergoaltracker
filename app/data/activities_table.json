@@ -1,0 +1,19 @@
+{"activities": [
+    {
+        "id": 1, 
+        "activityname": "painting"
+    }, 
+    {
+        "id": 2,
+        "activityname": "discus_throwing" 
+        },
+    {
+        "id": 3,
+        "activityname": "swimming"
+    },
+    {
+        "id": 4,
+        "activityname": "reading"
+    } 
+        ]
+}
