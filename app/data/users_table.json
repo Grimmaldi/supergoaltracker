@@ -1,7 +1,7 @@
 {
     "users": [{
-        "userid": "1",
-        "username": "JohnPExample",
+        "id": "1",
+        "username": "jeff",
         "password": "password1234",
         "name": "John P. Example",
         "activities": [
@@ -18,7 +18,7 @@
                 ]
     }, 
         {
-            "userid": "2",
+            "id": "2",
             "username": "JaneWExample",
             "password": "password4567",
             "name": "Jane W. Example",

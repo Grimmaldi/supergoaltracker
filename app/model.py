@@ -6,11 +6,11 @@ class Person:
 
 class User(Person):
 
-    def __init__(self, username, password):
+    def __init__(self, username, password, id = None):
         super().__init__()
         self.username = username
         self.password = password
-        self.id = None
+        self.id = id
         self.activities = []
 
     def __repr__(self):
