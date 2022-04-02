@@ -5,12 +5,14 @@ def new_user(users):
         for user in users:
             if username == user["username"]:
                 print("Sorry, that user name is already taken.  Select again.")
+                username = ''
                 break
-        keep_checking = False
-        if len(username.strip()) < 2:
-            print("User name must be at least two characters in length.")
-            keep_checking = True
-            continue
+            elif len(username.strip()) < 2:
+                print("User name must be at least two characters in length.")
+                username = ''
+                break
+            else:
+                keep_checking = False
     password = input('Please select a password. \n').strip()
     id = len(users) + 1
     user_tuple = (username, password, id) 
@@ -31,9 +33,6 @@ def existing_user(users):
         print("No user of this name found.  Please create a new user.")
         username, password, id = new_user(users)
         return (username, password, id)
-    
-
-    
 
 
 def welcome(users):
