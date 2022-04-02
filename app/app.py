@@ -6,17 +6,17 @@ import json
 class Session:
 
     def __init__(self):
+
+        with open('./app/data/users_table.json') as users_table:
+            users = json.load(users_table)
+
+        user = self.establish_user(users['users'])
+        print(user)
         
-        with open('./app/db.json') as dbfile:
-            db = json.load(dbfile)
-
-        welcome()
-        username = input('What is your username?')
-        password = input('What is your password.')
-        if username not in db:
-            user = User(username, password)
-        else:
-            # TODO: load user from DB 
-            NotImplemented
-
-    
+    def establish_user(self, users):
+        user_params = welcome(users)
+        username = user_params[0]
+        password = user_params[1]
+        id = user_params[2]
+        user = User(username, password, id)
+        return user
