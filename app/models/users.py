@@ -14,7 +14,7 @@ class User(Person):
         self.activities = []
 
     def __repr__(self):
-        return f"User({self.username})"
+        return f"User({self.id, self.username, self.password})"
 
     def add_activity(self, activity_name, **kwargs):
         if activity_name not in self:
@@ -54,20 +54,5 @@ class User(Person):
         return False
 
 
-class Activity:
-
-    def __init__(self, activity_name, **kwargs):
-        self.activity_name = activity_name
-        self._metrics = []
-
-    def edit_metric(metric, new_value):
-        for m in self.metrics:
-            if metric == m.name:
-                m.value = new_value
 
 
-class Metric:
-
-    def __init__(self, name, value):
-        self.name = name
-        self.value = value
