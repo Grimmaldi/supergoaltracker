@@ -15,8 +15,7 @@ def new_user(users):
                 keep_checking = False
     password = input('Please select a password. \n').strip()
     id = len(users) + 1
-    user_tuple = (username, password, id) 
-    return user_tuple
+    return {"username": username, "password": password, "id": id, "is_new": True}
 
 def existing_user(users):
     username = input('Please enter you username: ')
@@ -28,11 +27,11 @@ def existing_user(users):
             password = input('Please enter your password: ')
             if password != stored_password:
                 raise ValueError("Incorrect password")
-            return (username, password, id)
+            return {"username": username, "password": password, "id": id, "is_new": False}
     else:
         print("No user of this name found.  Please create a new user.")
         username, password, id = new_user(users)
-        return (username, password, id)
+        return {"username": username, "password": password, "id": id, "is_new": True}
 
 
 def welcome(users):
@@ -40,18 +39,10 @@ def welcome(users):
     while True:
         selection = input('If you are a new user, enter 1 to create a new account.  Enter 2 to sign in with an existing account.')
         if selection.strip() == '1':
-            new_tuple = new_user(users)
-            username = new_tuple[0]
-            password = new_tuple[1]
-            id = new_tuple[2]
-            responses = (username, password, id)
+            responses = new_user(users)
             return responses
         elif selection.strip() == '2':
-            new_tuple = existing_user(users)
-            username = new_tuple[0]
-            password = new_tuple[1]
-            id = new_tuple[2]
-            responses = (username, password, id)
+            responses = existing_user(users)
             return responses
         else:
             print("Response not understood.")
